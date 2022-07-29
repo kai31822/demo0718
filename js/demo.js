@@ -86,7 +86,7 @@ window.addEventListener("DOMContentLoaded", function () {
     let startValue = 0;
     let endValue = parseInt(valueDisplay.getAttribute("data-val"));
     let duration = Math.floor(interval / endValue);
-    
+
     let counter = setInterval(function () {
       startValue += 1;
       valueDisplay.textContent = startValue;
@@ -96,3 +96,17 @@ window.addEventListener("DOMContentLoaded", function () {
     }, duration);
   });
 });
+
+//chapter
+
+// window.addEventListener("scroll", function position() {
+//   let mainscroll = document.querySelector(".chapter");
+//   let rect1 = mainscroll.getBoundingClientRect();
+//   console.log(rect1.top);
+//   console.log(rect1.bottom);
+
+  // let sidebar = document.querySelector(".chapter-sidebar");
+  // let rect = sidebar.getBoundingClientRect();
+
+  // if sidebar 
+// });
