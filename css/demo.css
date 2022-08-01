@@ -196,6 +196,7 @@ header .icon {
   -o-object-fit: cover;
   object-fit: cover;
 }
+
 /* about */
 #about {
   padding: 100px 0;
@@ -300,10 +301,94 @@ header .icon {
   font-size: 18px;
 }
 
-.review {
-  width: 98vw;
+/* review */
+.carousel {
+  max-width: 1200px;
+  height: 500px;
+  /* border: 12px solid black; */
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 60px;
+  margin: 0 auto;
 }
 
+.carouselwrap {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  left: 0px;
+  display: flex;
+
+  /* 動畫 */
+  transition: all 1s;
+}
+
+.carouselwrap img {
+  width: 100%;
+  height: 100%;
+  /* 防止圖片寬度被壓縮 */
+  flex-shrink: 0;
+  /* 防止圖片寬高比改變 */
+  object-fit: cover;
+}
+
+.carousel .shift .btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+
+  background-color: teal;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  font-size: 40px;
+  font-weight: bold;
+  /* 水平垂直中 */
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.5;
+
+}
+
+.carousel .shift .left {
+  left: 20px;
+}
+
+.carousel .shift .right {
+  right: 20px;
+}
+
+.carousel .botton {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: max-content;
+  display: flex;
+  gap: 10px;
+}
+
+.carousel .botton .indicator {
+  height: 5px;
+  width: 40px;
+  background-color: teal;
+  cursor: pointer;
+  border-radius: 8px;
+
+}
+
+.carousel:hover .shift .btn {
+  opacity: 1;
+}
+
+/* my books */
 .my-books {
   max-width: 1200px;
   margin: 0 auto;
@@ -437,6 +522,7 @@ header .icon {
   font-weight: 800;
 }
 
+/* Contact */
 .Contact {
   padding: 40px 40px 0 40px;
   max-width: 1200px;
@@ -622,18 +708,19 @@ footer {
     padding: 0 15px;
 
   }
+
   /* about */
   #about {
     padding: 50px 0;
   }
-  
+
   #about .about-wrap {
     width: 100vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
   }
-  
+
   #about .about-img {
     -o-object-fit: cover;
     object-fit: cover;
@@ -641,38 +728,40 @@ footer {
     width: 100%;
     margin: 0 auto;
   }
-  
+
   #about .about-section {
     padding: 0 0 0 40px;
     width: 100%;
   }
-  
+
   .achievements {
     width: 100vw;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
   }
-  .achievements .achievements-wrap{
+
+  .achievements .achievements-wrap {
     width: calc(100% / 4);
     padding: 0 15px;
   }
+
   .achievements .achievements-wrap .achievements-item {
     text-align: center;
     width: 100%;
     padding: 40px 10px;
     background-color: rgb(239, 239, 239);
   }
-  
+
   .achievements .achievements-wrap strong {
     font-size: 34px;
   }
-  
+
   .achievements .achievements-wrap span {
     display: block;
     font-size: 20px;
   }
-  
+
 
   /* chapter */
   .chapter-title {
@@ -683,68 +772,80 @@ footer {
     font-size: 35px;
     color: var(--text-color);
   }
-  
+
   .chapter {
     display: flex;
+    flex-wrap: wrap;
+
   }
-  
-  .chapter .chapter-sidebar {
+
+  .chapter .chapter-sidebar-wrap {
     width: 20%;
-    height: 300px;
+    height: 100%;
     padding: 0 15px;
     font-size: 25px;
   }
-  
-  .chapter .chapter-sidebar li {
+
+  .chapter .chapter-sidebar-wrap .chapter-sidebar {
+
+    position: sticky;
+    top: 180px;
+    
+    margin: 0;
+    width: 100%;
+    height: 300px;
+  }
+
+  .chapter .chapter-sidebar-wrap .chapter-sidebar li {
     padding: 15px;
   }
-  
+
   .chapter .chapter-content {
     width: 65%;
     padding: 0 15px;
     margin: 0 auto;
   }
-  
+
   .chapter .chapter-section {
     background-color: var(--bg-color);
     padding: 60px 20px 20px 20px;
     margin-bottom: 20px;
   }
-  
+
   .chapter .chapter-section p {
     padding-top: 20px;
     font-size: 18px;
   }
-  
+
   .review {
     width: 98vw;
   }
-  
+
   .my-books {
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 50px;
     text-align: center;
   }
-  
+
   .my-books span {
     font-size: 20px;
     font-weight: 700;
     color: var(--text-color-span);
     letter-spacing: 2px;
   }
-  
+
   .my-books h2 {
     font-size: 60px;
   }
-  
+
   .my-books .bookwrap {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
   }
-  
+
   .my-books .bookwrap .books {
     height: 300px;
     width: 280px;
@@ -754,7 +855,7 @@ footer {
     background-repeat: no-repeat;
     position: relative;
   }
-  
+
   .my-books .bookwrap .books .books-overlay {
     position: absolute;
     top: 0;
@@ -765,7 +866,7 @@ footer {
     background: rgba(62, 61, 61, 0.244);
     z-index: -1;
   }
-  
+
   .my-books .bookwrap .books .books-text {
     position: absolute;
     bottom: 0;
@@ -773,7 +874,7 @@ footer {
     right: 0;
     opacity: 0;
   }
-  
+
   .author {
     max-width: 1200px;
     height: 100vh;
@@ -781,7 +882,7 @@ footer {
     padding-top: 50px;
     display: flex;
   }
-  
+
   .author .author-img {
     width: 50%;
     padding: 20px;
@@ -791,7 +892,7 @@ footer {
     -o-object-position: center;
     object-position: center;
   }
-  
+
   .author .autohor-section {
     margin-top: 20px;
     padding: 20px 0 0 40px;
@@ -799,18 +900,18 @@ footer {
     background-color: bisque;
     height: 550px;
   }
-  
+
   .author .autohor-section h2 {
     font-size: 40px;
     padding: 15px 0;
   }
-  
+
   .author .autohor-section p {
     padding: 15px 0;
     font-size: 18px;
     color: var(--text-color);
   }
-  
+
   .author .autohor-section span {
     padding-top: 15px;
     display: block;
@@ -819,30 +920,30 @@ footer {
     color: var(--text-color-span);
     letter-spacing: 2px;
   }
-  
+
   .author .autohor-section .about-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  
+
   .author .autohor-section .about-info li {
     width: 100%;
   }
-  
+
   .author .autohor-section .about-info li span {
     display: inline-block;
     color: black;
   }
-  
+
   .author .autohor-section .about-info li span:first-child {
     width: 25%;
   }
-  
+
   .author .autohor-section .about-info li span:last-child {
     color: var(--text-color);
   }
-  
+
   .author .autohor-section .about-p {
     margin-top: 30px;
     padding: 15px 20px;
@@ -852,45 +953,45 @@ footer {
     color: white;
     font-weight: 800;
   }
-  
+
   .Contact {
     padding: 40px 40px 0 40px;
     max-width: 1200px;
     height: 100vh;
     margin: 0 auto;
   }
-  
+
   .Contact h2 {
     text-align: center;
     font-size: 50px;
     color: var(--text-color);
     margin-bottom: 40px;
   }
-  
+
   .Contact .contact-wrap {
     display: flex;
     flex-wrap: nowrap;
   }
-  
+
   .Contact .contact-wrap .contact-item-wrap {
     display: flex;
     flex-wrap: wrap;
   }
-  
+
   .Contact .contact-wrap .contact-item-wrap .contact-item {
     width: 50%;
     height: 50%;
     text-align: center;
   }
-  
+
   .Contact .contact-wrap .contact-item-wrap .contact-item h1 {
     padding: 20px 5px;
   }
-  
+
   .Contact .contact-wrap .contact-item-wrap .contact-item p {
     padding: 20px 5px;
   }
-  
+
   .Contact .contact-wrap .contact-item-wrap .contact-item .contact-item-i {
     margin: 0 auto;
     width: 80px;
@@ -899,30 +1000,30 @@ footer {
     background-color: var(--text-color-span);
     border-radius: 100%;
   }
-  
+
   .Contact .contact-wrap .contact-item-wrap .contact-item .contact-item-i i {
     line-height: 80px;
   }
-  
+
   .Contact .form {
     background-color: var(--bg-color);
     padding: 30px;
   }
-  
+
   .Contact .form input {
     display: block;
     width: 100%;
     height: 30px;
     margin-bottom: 20px;
   }
-  
+
   .Contact .form input:last-child {
     background-color: var(--text-color-span);
     border-radius: 20px;
     width: 50%;
     margin: auto;
   }
-  
+
   .Contact .form textarea {
     resize: none;
     margin-bottom: 20px;
@@ -959,6 +1060,7 @@ footer {
     object-fit: cover;
 
   }
+
   /* about */
   #about .about-section {
     padding: 0 20px;

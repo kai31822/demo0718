@@ -8,106 +8,79 @@
     <meta name='description' content='kai'>
     <meta name='keywords' content='HTML,CSS,JavaScript'>
     <meta name='author' content='kai'>
-    <title>簡易收尋功能</title>
+    <title></title>
     <style>
-        .container {
-            margin: 10px 0;
-            display: flex;
-            gap: 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow-x: hidden;
         }
 
-        .item {
-            height: 100px;
-            width: 100px;
-            background-color: bisque;
+body{height:  5000px;}
+        .main {
+            position: relative;
+            height: 2000px;
+            width: 100vw;
+          
+            display: flex;
+
+        }
+
+        .main .l {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 25%;
+            height: 200px;
+            padding: 15px;
             border: 1px solid black;
+        }
+
+        .main .r {
+            position: absolute;
+            top: 0;
+            left: calc(25% + 30px);
+
+            width: 40%;
+            padding: 15px;
+            background-color: aqua;
+
+        }
+
+        footer {
+            background-color: black;
+            width: 100%;
+            text-align: center;
+            color: wheat;
+        }
+
+        footer>p {
+            padding: 10px 0;
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <input type="search" id="input1">
-        <button>enter</button>
+    <div class="main">
+        <div class="l">lllllllllllllllllllllllllllll</div>
+        <div class="r">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, necessitatibus dolorum
+            suscipit asperiores voluptatibus praesentium illo consectetur repellat dicta omnis officiis autem excepturi
+            corporis quis tenetur dolore aliquam. Adipisci, quae!</div>
     </div>
-    <div class="container">
-
-    </div>
+    <footer>
+        <p>dsfafega footer</p>
+    </footer>
     <script>
-        // 資料
-        let test = [
-            {
-                name: "1",
-                age: 100
-            },
-            {
-                name: "12",
-                age: 200
-            },
-            {
-                name: "22",
-                age: 300
-            },
-            {
-                name: "3",
-                age: 100
-            },
-            {
-                name: "47",
-                age: 200
-            },
-            {
-                name: "55",
-                age: 300
-            },
-        ]
-
-        // 資料產生的地方
-        let itemsbox = document.querySelector('.container')
-        function displayMenuItems(menuItems) {
-            let displayMenu = menuItems.map(function (item) {
-
-                return `
-         <div class="item">
-             <strong class="num" data-val="${item.name}">name:${item.name}</strong><br>
-             <span>age:${item.age}</span>
-         </div>
-            `;
-            });
-
-            displayMenu = displayMenu.join("");
-            itemsbox.innerHTML = displayMenu;
-        }
-        window.addEventListener("DOMContentLoaded", function () {
-            displayMenuItems(test);
-        })
 
 
-        // 搜尋功能
-        let btn = document.querySelector('button')
-
-        btn.addEventListener('click', function () {
-            let inputval = document.querySelector('#input1').value.trim() //取出INPUT的值 trim移除字串起始及結尾處的空白字元
-
-            // console.log(inputval);
-
-            //filter() 方法會建立一個經指定之函式運算後，由原陣列中通過該函式檢驗之元素所構成的新陣列。
-            let filter = test.filter(function (item) {
-                // 方法一
-                // return item.name.match(inputval)  //方法可在字符串内检索指定的值，或找到一个或多个正则表達式的匹配
-                //方法二
-                if  (item.name.includes(inputval)          
-                ){
-                    return item }
-            
-            })
-
-            // console.log(filter);
-            displayMenuItems(filter);
-        })
-
-
-
+        // 2
+        // document.addEventListener('scroll', function () {
+        //     let elem = document.querySelector('.main');
+        //     let rect = elem.getBoundingClientRect();
+        //     let l = document.querySelector('.l')
+        //     l.style.top =  Math.abs(rect.y)    + 'px';
+        // })
     </script>
 </body>
 

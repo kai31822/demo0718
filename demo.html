@@ -17,7 +17,7 @@
 <body>
     <!-- navbar -->
     <div id="top"></div>
-    <header >
+    <header>
         <div class="logo"><a href="./demo.html"></a></div>
         <nav class="navigation">
             <ul class="menu">
@@ -99,14 +99,15 @@
         </div>
         <div class="chapter">
 
-
-            <div class="chapter-sidebar" >
-                <ul >
-                    <li><a href="#Title-Page">Title Page</a></li>
-                    <li><a href="#Copyright">Copyright</a></li>
-                    <li><a href="#Table-of-Contents">Table of Contents</a></li>
-                    <li><a href="#Foreword">Foreword</a></li>
-                </ul>
+            <div class="chapter-sidebar-wrap">
+                <div class="chapter-sidebar">
+                    <ul class="nav">
+                        <li><a href="#Title-Page">Title Page</a></li>
+                        <li><a href="#Copyright">Copyright</a></li>
+                        <li><a href="#Table-of-Contents">Table of Contents</a></li>
+                        <li><a href="#Foreword">Foreword</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="chapter-content">
                 <div class="chapter-section" id="Title-Page">
@@ -154,49 +155,24 @@
     </div>
     <!-- chapter end -->
     <!-- review -->
-    <div class="review" id="Reviews">
-        <div class="review-bg"></div>
-        <div class="review-carouels">
-            <div class="review-carousels-item">
-                <p></p>
-                <div class="review-user">
-                    <img src="" alt="">
-                    <p></p>
-                    <span></span>
-                </div>
-            </div>
-            <div class="review-carousels-item">
-                <p></p>
-                <div class="review-user">
-                    <img src="" alt="">
-                    <p></p>
-                    <span></span>
-                </div>
-            </div>
-            <div class="review-carousels-item">
-                <p></p>
-                <div class="review-user">
-                    <img src="" alt="">
-                    <p></p>
-                    <span></span>
-                </div>
-            </div>
-            <div class="review-carousels-item">
-                <p></p>
-                <div class="review-user">
-                    <img src="" alt="">
-                    <p></p>
-                    <span></span>
-                </div>
-            </div>
-            <div class="review-carousels-item">
-                <p></p>
-                <div class="review-user">
-                    <img src="" alt="">
-                    <p></p>
-                    <span></span>
-                </div>
-            </div>
+    <div class="carousel" id="Reviews">
+        <div class="carouselwrap">
+            <img src="https://images.unsplash.com/photo-1659298059663-a23f52499343?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            <img src="https://images.unsplash.com/photo-1659303065768-566a9c05b253?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            <img src="https://images.unsplash.com/photo-1659286547122-df04e49baf9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+                alt="">
+        </div>
+
+        <div class="shift">
+            <button class="btn left" onclick="leftshift()">&lt;</button>
+            <button class="btn right" onclick="rightshift()">&gt;</button>
+        </div>
+        <div class="botton">
+            <button class="indicator" onclick="setindex(0)"></button>
+            <button class="indicator" onclick="setindex(1)"></button>
+            <button class="indicator" onclick="setindex(2)"></button>
         </div>
     </div>
     <!-- review end-->
@@ -331,12 +307,12 @@
     <!-- footer -->
     <footer>
 
-        <p>Copyright ©2022 All rights reserved | This template is made with by Colorlib</p>
+        <p>Copyright ©2022 All rights reserved | This template is made by kai </p>
 
     </footer>
     <script src="./js/demo.js"></script>
-    <script src="./js/test.js"></script>
-   
+    <script src="./js/carousel.js"></script>
+
 </body>
 
 </html>
