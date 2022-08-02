@@ -296,7 +296,7 @@ header .icon {
 
 .chapter .chapter-sidebar li {
   padding: 15px;
-  border-bottom: 1px black solid;
+  /* border-bottom: 1px black solid; */
 }
 
 .chapter .chapter-sidebar li::after {
@@ -306,10 +306,14 @@ header .icon {
   transition: transform 0.2s ease-in-out;
   border-bottom: solid 3px #019fb6;
 }
+
 .chapter .chapter-sidebar li:hover:after {
 
   transform: scaleX(1);
   
+}
+.chapter .chapter-sidebar a{
+  color: black;
 }
 .chapter .chapter-content {
   flex: 0 0 66.6666%;
@@ -446,7 +450,7 @@ header .icon {
   height: 300px;
   width: 280px;
   margin: 10px;
-  background: url("../images/book3.jpg");
+  /* background: url("../images/book3.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
