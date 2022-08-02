@@ -9,7 +9,7 @@
 body,
 html {
   width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 * {
@@ -259,6 +259,12 @@ header .icon {
   font-size: 20px;
 }
 
+/* chapter */
+.chapter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .chapter-title {
   display: block;
   text-align: center;
@@ -270,22 +276,43 @@ header .icon {
 
 .chapter {
   display: flex;
+  position: relative;
+}
+
+.chapter .chapter-sidebar-wrap {
+  flex: 0 0 33.3333%;
+
 }
 
 .chapter .chapter-sidebar {
-
-  width: 20%;
+  position: sticky;
+  top: 100px;
   height: 300px;
   padding: 0 15px;
   font-size: 25px;
+
+
 }
 
 .chapter .chapter-sidebar li {
   padding: 15px;
+  border-bottom: 1px black solid;
 }
 
+.chapter .chapter-sidebar li::after {
+  content: "";
+  display: block;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+  border-bottom: solid 3px #019fb6;
+}
+.chapter .chapter-sidebar li:hover:after {
+
+  transform: scaleX(1);
+  
+}
 .chapter .chapter-content {
-  width: 65%;
+  flex: 0 0 66.6666%;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -412,6 +439,7 @@ header .icon {
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
+  justify-content: space-around;
 }
 
 .my-books .bookwrap .books {
@@ -422,6 +450,16 @@ header .icon {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+
+}
+
+.my-books .bookwrap .books:hover {
+  border: 3px rgb(255, 255, 255) solid;
+  box-shadow: 2px 2px 20px 3px rgba(0, 0, 0, 0.5) inset;
+  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  z-index: 2;
 }
 
 .my-books .bookwrap .books .books-overlay {
@@ -432,7 +470,7 @@ header .icon {
   bottom: 0;
   opacity: 0;
   background: rgba(62, 61, 61, 0.244);
-  z-index: -1;
+
 }
 
 .my-books .bookwrap .books .books-text {
@@ -440,12 +478,45 @@ header .icon {
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0;
+  opacity: 1;
+  background-color: rgba(255, 228, 196, 0.9);
 }
 
+#overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
+
+#text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/* books end */
 .author {
   max-width: 1200px;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0 auto;
   padding-top: 50px;
   display: flex;
@@ -453,7 +524,7 @@ header .icon {
 
 .author .author-img {
   width: 50%;
-  padding: 20px;
+  /* padding: 20px; */
   -o-object-fit: cover;
   object-fit: cover;
   height: 590px;
@@ -462,11 +533,11 @@ header .icon {
 }
 
 .author .autohor-section {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding: 20px 0 0 40px;
   width: 50%;
   background-color: bisque;
-  height: 550px;
+  /* height: 550px; */
 }
 
 .author .autohor-section h2 {
@@ -526,7 +597,7 @@ header .icon {
 .Contact {
   padding: 40px 40px 0 40px;
   max-width: 1200px;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0 auto;
 }
 
@@ -763,6 +834,7 @@ footer {
   }
 
 
+
   /* chapter */
   .chapter-title {
     display: block;
@@ -779,18 +851,24 @@ footer {
 
   }
 
+  /* 
   .chapter .chapter-sidebar-wrap {
     width: 20%;
     height: 100%;
     padding: 0 15px;
     font-size: 25px;
+  } */
+  .chapter .chapter-sidebar-wrap {
+
+    display: none;
   }
+
 
   .chapter .chapter-sidebar-wrap .chapter-sidebar {
 
     position: sticky;
     top: 180px;
-    
+
     margin: 0;
     width: 100%;
     height: 300px;
@@ -800,8 +878,13 @@ footer {
     padding: 15px;
   }
 
-  .chapter .chapter-content {
+  /* .chapter .chapter-content {
     width: 65%;
+    padding: 0 15px;
+    margin: 0 auto;
+  } */
+  .chapter .chapter-content {
+    width: 100%;
     padding: 0 15px;
     margin: 0 auto;
   }
@@ -821,6 +904,7 @@ footer {
     width: 98vw;
   }
 
+  /* mybooks */
   .my-books {
     max-width: 1200px;
     margin: 0 auto;
@@ -844,6 +928,7 @@ footer {
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
+    justify-content: space-evenly;
   }
 
   .my-books .bookwrap .books {
@@ -854,6 +939,15 @@ footer {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+  }
+
+  .my-books .bookwrap .books:hover {
+    border: none;
+    box-shadow: none;
+    transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    z-index: none;
   }
 
   .my-books .bookwrap .books .books-overlay {
@@ -872,33 +966,34 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    opacity: 0;
+    opacity: 1;
   }
 
   .author {
     max-width: 1200px;
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0 auto;
     padding-top: 50px;
     display: flex;
   }
 
   .author .author-img {
+    margin-top: 20px;
     width: 50%;
-    padding: 20px;
+
     -o-object-fit: cover;
     object-fit: cover;
-    height: 590px;
+    /* height:   100%; */
     -o-object-position: center;
     object-position: center;
   }
 
   .author .autohor-section {
     margin-top: 20px;
-    padding: 20px 0 0 40px;
+    padding: 20px 30px;
     width: 50%;
     background-color: bisque;
-    height: 550px;
+    /* height: 550px; */
   }
 
   .author .autohor-section h2 {
@@ -957,7 +1052,7 @@ footer {
   .Contact {
     padding: 40px 40px 0 40px;
     max-width: 1200px;
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0 auto;
   }
 
@@ -971,6 +1066,7 @@ footer {
   .Contact .contact-wrap {
     display: flex;
     flex-wrap: nowrap;
+    flex-direction: column;
   }
 
   .Contact .contact-wrap .contact-item-wrap {
@@ -979,8 +1075,11 @@ footer {
   }
 
   .Contact .contact-wrap .contact-item-wrap .contact-item {
-    width: 50%;
+    width: calc(50% - 20px);
+    padding-top: 15px;
     height: 50%;
+    margin: 10px;
+    border: 1px black dashed;
     text-align: center;
   }
 
@@ -1027,6 +1126,7 @@ footer {
   .Contact .form textarea {
     resize: none;
     margin-bottom: 20px;
+    width: 100%;
   }
 }
 
@@ -1061,11 +1161,84 @@ footer {
 
   }
 
+  .achievements .achievements-wrap {
+    width: calc(100% / 2);
+    padding: 0 15px 10px 15px;
+  }
+
+  /* chapter */
+  .chapter .chapter-sidebar-wrap {
+
+    display: none;
+  }
+
+  .chapter .chapter-content {
+    width: 100%;
+
+  }
+
   /* about */
+  .achievements {
+    width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+
   #about .about-section {
     padding: 0 20px;
     width: 100%;
   }
-}
 
-/*# sourceMappingURL=demo.css.map */
+  /* book */
+  .my-books .bookwrap .books {
+    height: 49vh;
+    width: 100%;
+    margin: 10px;
+    background: url(../images/book3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .my-books .bookwrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  /* author */
+  .author .author-img {
+    display: none;
+  }
+
+  .author .autohor-section {
+    margin-top: 20px;
+    padding: 20px 30px;
+    width: 100%;
+    background-color: bisque;
+    /* height: 550px; */
+  }
+
+  /* contact me */
+  .Contact .contact-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .sm-contact-item {
+    display: none;
+  }
+
+  .Contact .form textarea {
+    resize: none;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+}

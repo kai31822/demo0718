@@ -8,7 +8,7 @@
     <meta name='description' content='kai'>
     <meta name='keywords' content='HTML,CSS,JavaScript'>
     <meta name='author' content='kai'>
-    <link rel="stylesheet" href="./css/demo.css">
+    <link rel="stylesheet" href="/css/demo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
     <title>demo</title>
@@ -18,7 +18,7 @@
     <!-- navbar -->
     <div id="top"></div>
     <header>
-        <div class="logo"><a href="./demo.html"></a></div>
+        <div class="logo"><a href="/demo.html"></a></div>
         <nav class="navigation">
             <ul class="menu">
                 <li><a href="#top">Home</a></li>
@@ -26,13 +26,13 @@
                 <li><a href="#chapter">Chapter</a></li>
                 <li><a href="#Reviews">Reviews</a></li>
                 <li class="dropdown"><a href="#MyBooks">My Books</a>
-                    <ul class="dropdown-content">
+                    <!-- <ul class="dropdown-content">
                         <li class="dropdown-item"><a href="#">link1</a></li>
                         <li class="dropdown-item"><a href="#">link2</a></li>
                         <li class="dropdown-item"><a href="#">link3</a></li>
                         <li class="dropdown-item"><a href="#">link4</a></li>
                         <li class="dropdown-item"><a href="#">link5</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <li><a href="#Author">Author</a></li>
                 <li><a href="#Contact">Contact</a></li>
@@ -67,7 +67,7 @@
     <!-- about -->
     <section id="about">
         <div class="about-wrap">
-            <img src="./images/book1.jpg" alt="" class="about-img">
+            <img src="/images/book1.jpg" alt="" class="about-img">
             <div class="about-section">
                 <h1>About The Book</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora qui, nihil accusantium aliquam rerum
@@ -93,7 +93,7 @@
     </div>
     <!-- about end -->
     <!-- chapter -->
-    <div class="container" id="chapter">
+    <div class="chapter-container" id="chapter">
         <div class="chapter-title">
             <h1>What's Inside The Book</h1>
         </div>
@@ -239,6 +239,10 @@
             </div>
         </div>
     </div>
+    <div id="overlay">
+        <div id="text">Overlay Text</div>
+    </div>
+  
     <!-- Author -->
     <div class="author" id="Author">
         <img src="./images/book4.jpg" alt="" class="author-img">
@@ -254,7 +258,6 @@
                 <li class="flex"><span>Email:</span> </li>
                 <li class="flex"><span>Phone: </span> <span>0987654321</span></li>
             </ul>
-            <button class="about-p">120 View All Books</button>
         </div>
     </div>
     <!-- Author end -->
@@ -263,8 +266,8 @@
         <h2>Contact Me</h1>
             <div class="contact-wrap">
                 <div class="contact-item-wrap">
-                    <div class="contact-item">
-                        <div class="contact-item-i"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="contact-item sm-contact-item">
+                        <div class="contact-item-i "><i class="fa-solid fa-location-dot"></i></div>
                         <div>
                             <h1>Address</h1>
                             <p>AddressAddress</p>
@@ -284,8 +287,8 @@
                             <p>info@yoursite.com</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-item-i"><i class="fa-solid fa-earth-asia"></i></div>
+                    <div class="contact-item sm-contact-item">
+                        <div class="contact-item-i "><i class="fa-solid fa-earth-asia"></i></div>
                         <div>
                             <h1>Website</h1>
                             <p>yoursite.com</p>
@@ -304,15 +307,17 @@
             </div>
     </div>
     <!-- Contact end -->
+    <!-- cart -->
+
     <!-- footer -->
     <footer>
 
         <p>Copyright ©2022 All rights reserved | This template is made by kai </p>
 
     </footer>
-    <script src="./js/demo.js"></script>
-    <script src="./js/carousel.js"></script>
-
+    <script src="/js/demo.js"></script>
+    <script src="/js/carousel.js"></script>
+   <script src="/js/mybooks.js"> </script>
 </body>
 
 </html>
