@@ -13,7 +13,7 @@ const mybooks = [
   
   let book_img = document.querySelectorAll(".books");
   for (let i = 0; i < book_img.length; i++) {
-    book_img[i].style.background = `url("/images/${mybooks[i]}.jpg")`;
+    book_img[i].style.background = `url("images/${mybooks[i]}.jpg")`;
     book_img[i].style.backgroundSize = "cover";
   }
 

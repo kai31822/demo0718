@@ -25,7 +25,7 @@ function navclick() {
 let tech = document.querySelector(".tech");
 let tech_img = document.querySelectorAll(".tech-img");
 for (let i = 0; i < tech_img.length; i++) {
-  tech_img[i].src = "/images/" + bookimg[i] + ".jpg";
+  tech_img[i].src = "images/" + bookimg[i] + ".jpg";
 }
 
 //about
