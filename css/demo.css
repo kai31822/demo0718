@@ -457,14 +457,14 @@ header .icon {
 
 }
 
-.my-books .bookwrap .books:hover {
+/* .my-books .bookwrap .books:hover {
   border: 3px rgb(255, 255, 255) solid;
   box-shadow: 2px 2px 20px 3px rgba(0, 0, 0, 0.5) inset;
   transform: scale(1.25);
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   z-index: 2;
-}
+} */
 
 .my-books .bookwrap .books .books-overlay {
   position: absolute;
@@ -615,6 +615,7 @@ header .icon {
 .Contact .contact-wrap {
   display: flex;
   flex-wrap: nowrap;
+  margin-bottom: 15px;
 }
 
 .Contact .contact-wrap .contact-item-wrap {
@@ -1071,6 +1072,7 @@ footer {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
+    
   }
 
   .Contact .contact-wrap .contact-item-wrap {
@@ -1111,6 +1113,7 @@ footer {
   .Contact .form {
     background-color: var(--bg-color);
     padding: 30px;
+    
   }
 
   .Contact .form input {
