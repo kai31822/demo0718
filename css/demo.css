@@ -1138,7 +1138,11 @@ footer {
 }
 
 @media only screen and (max-width: 480px) {
-
+/* banner */
+.banner .banner_rignt_text{
+  padding:0 15px;
+  max-width: none;
+}
   /* 分隔 */
   .container {
     max-width: 1200px;
@@ -1174,6 +1178,7 @@ footer {
   }
 
   /* chapter */
+  
   .chapter .chapter-sidebar-wrap {
 
     display: none;
@@ -1181,6 +1186,7 @@ footer {
 
   .chapter .chapter-content {
     width: 100%;
+    flex:0 0 100%;
 
   }
 
